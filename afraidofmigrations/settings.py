@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'optimize_makemigrations.apps.OptimizeMakemigrationsConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
