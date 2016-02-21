@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'optimize_makemigrations.apps.OptimizeMakemigrationsConfig',
     'non_nullable_field.apps.NonNullableFieldConfig',
     'new_app_name.apps.NewAppNameConfig',
+    'alter_pk.apps.AlterPkConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
