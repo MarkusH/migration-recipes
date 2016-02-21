@@ -7,4 +7,4 @@ class Author(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=50)
-    author_name = models.ForeignKey(Author, null=True)
+    author = models.ForeignKey(Author, null=True)
