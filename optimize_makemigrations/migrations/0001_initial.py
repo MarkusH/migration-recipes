@@ -15,22 +15,18 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Book',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200)),
-            ],
-        ),
-        migrations.CreateModel(
             name='Library',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=200)),
             ],
         ),
-        migrations.AddField(
-            model_name='book',
-            name='library',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='optimize_makemigrations.Library'),
+        migrations.CreateModel(
+            name='Book',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('title', models.CharField(max_length=200)),
+                ('library', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='optimize_makemigrations.Library')),
+            ],
         ),
     ]
