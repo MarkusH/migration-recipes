@@ -12,6 +12,15 @@ def forwards(apps, schema_editor):
         post.save(update_fields=['author_name'])
 
 
+def backwards(apps, schema_editor):
+    Author = apps.get_model('alter_pk', 'Author')
+    Post = apps.get_model('alter_pk', 'Post')
+    authors = dict(Author.objects.values_list('name', 'pk'))
+    for post in Post.objects.all():
+        post.author_id = authors[post.author_name]
+        post.save(update_fields=['author_id'])
+
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -19,5 +28,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(forwards, migrations.RunPython.noop),
+        migrations.RunPython(forwards, backwards),
     ]
