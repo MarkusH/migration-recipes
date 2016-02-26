@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'optimize_makemigrations.apps.OptimizeMakemigrationsConfig',
     'non_nullable_field.apps.NonNullableFieldConfig',
-    'rename_app.apps.RenameAppConfig',
+    'new_app_name.apps.NewAppNameConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

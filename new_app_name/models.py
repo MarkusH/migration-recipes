@@ -10,7 +10,7 @@ class Author(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=50)
-    author = models.ForeignKey('rename_app.Author')
+    author = models.ForeignKey('new_app_name.Author')
 
     class Meta:
         db_table = 'rename_app_book'

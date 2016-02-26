@@ -8,7 +8,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('rename_app', '0002_initial_data'),
+        ('new_app_name', '0002_initial_data'),
     ]
 
     operations = [

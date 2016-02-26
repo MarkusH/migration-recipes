@@ -6,8 +6,8 @@ from django.db import migrations
 
 
 def forwards(apps, schema_editor):
-    Author = apps.get_model('rename_app', 'Author')
-    Book = apps.get_model('rename_app', 'Book')
+    Author = apps.get_model('new_app_name', 'Author')
+    Book = apps.get_model('new_app_name', 'Book')
     author1 = Author.objects.create(name='Author 1')
     author2 = Author.objects.create(name='Author 2')
     Book.objects.create(title='Title 1.1', author=author1)
@@ -17,7 +17,7 @@ def forwards(apps, schema_editor):
 
 
 def backwards(apps, schema_editor):
-    Author = apps.get_model('rename_app', 'Author')
+    Author = apps.get_model('new_app_name', 'Author')
     Author.objects.filter(name='Author 1').delete()
     Author.objects.filter(name='Author 2').delete()
 
@@ -25,7 +25,7 @@ def backwards(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('rename_app', '0001_initial'),
+        ('new_app_name', '0001_initial'),
     ]
 
     operations = [
