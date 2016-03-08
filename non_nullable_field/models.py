@@ -5,7 +5,7 @@ from django.utils.safestring import mark_safe
 
 class Author(models.Model):
     name = models.CharField(max_length=50)
-    homepage = models.URLField(null=True)
+    homepage = models.URLField()
 
     @classmethod
     def create(cls, name, homepage):
