@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.html import format_html
-from django.utils.safestring import mark_safe
 
 
 class Author(models.Model):
@@ -13,9 +12,7 @@ class Author(models.Model):
 
     @property
     def homepage_tag(self):
-        if self.homepage:
-            return format_html(
-                '<a href="{homepage}">{homepage}</a>',
-                homepage=self.homepage,
-            )
-        return mark_safe('<i>No homepage</i>')
+        return format_html(
+            '<a href="{homepage}">{homepage}</a>',
+            homepage=self.homepage,
+        )
