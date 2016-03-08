@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'optimize_makemigrations.apps.OptimizeMakemigrationsConfig',
+    'non_nullable_field.apps.NonNullableFieldConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
